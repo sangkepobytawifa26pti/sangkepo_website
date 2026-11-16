@@ -162,10 +162,12 @@ document.getElementById("orderForm").addEventListener("submit", function(e) {
     const jumlah = parseInt(document.getElementById("jumlah").value);
     const catatan = document.getElementById("catatan").value.trim();
 
-    if (!nama || !rasa || !jumlah || jumlah < 1) {
-        alert("Mohon lengkapi data pesanan!");
-        return;
-    }
+    alert(
+    "Nama: " + nama +
+    "\nRasa: " + rasa +
+    "\nJumlah: " + jumlah
+);
+return;
 
     const total = jumlah * 10000;
 
