@@ -154,15 +154,18 @@ const jumlah=parseInt(document.getElementById("jumlah").value);
 const catatan=document.getElementById("catatan").value;
 const total=jumlah*10000;
 
-const pesan=
-"Halo Sangkepo! Saya ingin memesan:%0A"+
-"Nama: "+encodeURIComponent(nama)+
-"%0ARasa: "+encodeURIComponent(rasa)+
-"%0AJumlah: "+jumlah+" kemasan"+
-"%0ATotal: Rp"+total.toLocaleString("id-ID")+
-"%0ACatatan: "+encodeURIComponent(catatan||"-");
+const pesan =
+"Halo Sangkepo! Saya ingin memesan:\n" +
+"Nama: " + nama +
+"\nRasa: " + rasa +
+"\nJumlah: " + jumlah + " kemasan" +
+"\nTotal: Rp" + total.toLocaleString("id-ID") +
+"\nCatatan: " + (catatan || "-");
 
-window.open("https://wa.me/6285828669110?text="+pesan,"_blank");
+const nomorWA = "6285828669110";
+const url = "https://wa.me/" + nomorWA + "?text=" + encodeURIComponent(pesan);
+
+window.open(url, "_blank");
 });
 </script>
 
