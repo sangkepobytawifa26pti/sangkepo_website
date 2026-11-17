@@ -9,11 +9,13 @@
 *{box-sizing:border-box;scroll-behavior:smooth}
 body{margin:0;font-family:Arial,sans-serif;background:#fffaf0;color:#402714}
 header{background:#fff;position:sticky;top:0;padding:17px 6%;display:flex;justify-content:space-between;align-items:center;box-shadow:0 2px 12px #0001;z-index:5}
-.logo{font-size:25px;font-weight:900;color:#a65c0c}
-  .logo {
-    width: 60px;
-    height: 60px;
-    object-fit: contain;
+.logo{display:flex;align-items:center}
+.logo img{
+  height:60px;
+  width:auto;
+  max-width:180px;
+  object-fit:contain;
+  display:block;
 }
 nav a{margin:0 9px;text-decoration:none;color:#51351d;font-weight:bold}
 .hero{padding:65px 7%;display:flex;align-items:center;gap:40px;flex-wrap:wrap;background:linear-gradient(120deg,#fff0c5,#fffaf0)}
@@ -44,16 +46,20 @@ input,select,textarea{width:100%;padding:13px;border:1px solid #ddc9a8;border-ra
 button{width:100%;padding:15px;background:#16864b;color:white;border:0;border-radius:30px;font-size:16px;font-weight:bold;cursor:pointer;margin-top:20px}
 footer{padding:30px;text-align:center;background:#3b2413;color:white;line-height:1.8}
 .social a{color:#ffda75;margin:8px;text-decoration:none}
-@media(max-width:650px){header{flex-wrap:wrap;gap:12px}nav{width:100%;display:flex;flex-wrap:wrap;gap:12px}nav a{margin:0}.hero{padding-top:40px}}
+@media(max-width:650px){
+  header{flex-wrap:wrap;gap:12px}
+  nav{width:100%;display:flex;flex-wrap:wrap;gap:12px}
+  nav a{margin:0}
+  .hero{padding-top:40px}
+  .logo img{height:48px}
+}
 </style>
 </head>
 <body>
-
 <header>
-<div class="logo"> 
-  <img src="LOGO SANGKEPO.png">
-  
-</div>
+<a class="logo" href="#home">
+  <img src="LOGO SANGKEPO.png" alt="Logo Sangkepo by TAWIFA">
+</a>
 <nav>
 <a href="#home">Beranda</a>
 <a href="#about">Tentang</a>
