@@ -112,8 +112,8 @@ footer{padding:30px;text-align:center;background:#3b2413;color:white;line-height
 <label>Nama Pemesan</label>
 <input id="nama" required placeholder="Nama kamu">
 
-<label>Pilih Varian Rasa</label>
-<select id="rasa">
+<label for="varian">Pilih Varian Rasa</label>
+<select id="varian">
     <option value="Balado">Balado</option>
     <option value="Jagung Bakar">Jagung Bakar</option>
     <option value="Coklat">Coklat</option>
@@ -149,7 +149,7 @@ document.getElementById("orderForm").addEventListener("submit",function(e){
 e.preventDefault();
 
 const nama=document.getElementById("nama").value;
-const rasa=document.getElementById("rasa").value;
+const rasa = document.getElementById("varian").value;
 const jumlah=parseInt(document.getElementById("jumlah").value);
 const catatan=document.getElementById("catatan").value;
 const total=jumlah*10000;
