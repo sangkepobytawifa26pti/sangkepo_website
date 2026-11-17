@@ -9,13 +9,25 @@
 *{box-sizing:border-box;scroll-behavior:smooth}
 body{margin:0;font-family:Arial,sans-serif;background:#fffaf0;color:#402714}
 header{background:#fff;position:sticky;top:0;padding:17px 6%;display:flex;justify-content:space-between;align-items:center;box-shadow:0 2px 12px #0001;z-index:5}
-.logo{display:flex;align-items:center}
+.logo{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  text-decoration:none;
+}
 .logo img{
   height:60px;
   width:auto;
   max-width:180px;
   object-fit:contain;
   display:block;
+}
+.logo-text{
+  font-size:22px;
+  font-weight:900;
+  color:#a65c0c;
+  line-height:1.1;
+  letter-spacing:.5px;
 }
 nav a{margin:0 9px;text-decoration:none;color:#51351d;font-weight:bold}
 .hero{padding:65px 7%;display:flex;align-items:center;gap:40px;flex-wrap:wrap;background:linear-gradient(120deg,#fff0c5,#fffaf0)}
@@ -52,16 +64,18 @@ footer{padding:30px;text-align:center;background:#3b2413;color:white;line-height
     gap:8px;
     padding:10px 4%;
   }
-  .logo img{height:40px;max-width:90px}
+  .logo{gap:6px}
+  .logo img{height:36px;max-width:60px}
+  .logo-text{font-size:14px}
   nav{
     width:auto;
     display:flex;
     flex-wrap:nowrap;
-    gap:10px;
+    gap:8px;
   }
   nav a{
     margin:0;
-    font-size:13px;
+    font-size:12px;
     white-space:nowrap;
   }
   .hero{padding-top:40px}
@@ -71,7 +85,10 @@ footer{padding:30px;text-align:center;background:#3b2413;color:white;line-height
 <body>
 <header>
 <a class="logo" href="#home">
-  <img src="LOGO SANGKEPO.png" alt="Logo Sangkepo by TAWIFA">
+  <img src="LOGO SANGKEPO.png" alt="by TAWIFA">
+  <span class="logo-text">
+    by TAWIFA
+  </span>
 </a>
 <nav>
 <a href="#home">Beranda</a>
