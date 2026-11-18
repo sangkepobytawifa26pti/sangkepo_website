@@ -181,27 +181,28 @@ WhatsApp: 085828669110<br>
 </footer>
 
 <script>
-document.getElementById("orderForm").addEventListener("submit",function(e){
-e.preventDefault();
+document.getElementById("orderForm").addEventListener("submit", function(e){
+  e.preventDefault();
 
-const nama=document.getElementById("nama").value;
-const rasa = document.getElementById("varian").value;
-const jumlah=parseInt(document.getElementById("jumlah").value);
-const catatan=document.getElementById("catatan").value;
-const total=jumlah*10000;
+  const nama    = document.getElementById("nama").value.trim();
+  const rasa    = document.getElementById("varian").value;
+  const jumlah  = parseInt(document.getElementById("jumlah").value) || 1;
+  const catatan = document.getElementById("catatan").value.trim();
+  const total   = jumlah * 10000;
 
-const pesan =
-"Halo Sangkepo! "Saya ingin memesan:\n" +
-"Nama: " + nama +
-"\nRasa: " + rasa +
-"\nJumlah: " + jumlah + " kemasan" +
-"\nTotal: Rp" + total.toLocaleString("id-ID") +
-"\nCatatan: " + (catatan || "-");
+  const pesan =
+    "Halo Sangkepo! Saya ingin memesan:\n" +
+    "Nama: " + nama + "\n" +
+    "Rasa: " + rasa + "\n" +
+    "Jumlah: " + jumlah + " kemasan\n" +
+    "Total: Rp" + total.toLocaleString("id-ID") + "\n" +
+    "Catatan: " + (catatan || "-");
 
-const nomorWA = "6285828669110";
-const url = "https://wa.me/" + nomorWA + "?text=" + encodeURIComponent(pesan);
+  const nomorWA = "6285828669110";
+  const url = "https://api.whatsapp.com/send?phone=" + nomorWA +
+              "&text=" + encodeURIComponent(pesan);
 
-window.open(url, "_blank");
+  window.location.href = url;
 });
 </script>
 
