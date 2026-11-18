@@ -41,6 +41,86 @@ section{padding:65px 7%}
 h2{text-align:center;font-size:34px;color:#814714}
 .subtitle{text-align:center;color:#816d57;line-height:1.6}
 .about{text-align:center;max-width:900px;margin:auto;line-height:1.9}
+
+/* Komposisi (di dalam section Tentang) */
+.ingredients-box{
+  background:#fff;
+  max-width:520px;
+  margin:35px auto 0;
+  padding:28px 26px;
+  border-radius:18px;
+  box-shadow:0 5px 20px #0000000c;
+  text-align:left;
+  line-height:1.5;
+}
+.ingredients-box h3{
+  text-align:center;
+  color:#854812;
+  font-size:22px;
+  margin:0 0 6px;
+}
+.ingredients-intro{
+  text-align:center;
+  color:#816d57;
+  margin:0 0 18px;
+}
+.ingredients-list{
+  list-style:none;
+  padding:0;
+  margin:0;
+}
+.ingredients-list li{
+  display:flex;
+  align-items:center;
+  gap:14px;
+  padding:12px 0;
+  border-top:1px solid #f0e4cc;
+}
+.ingredients-list li:first-child{border-top:0}
+.ing-icon{
+  flex:0 0 42px;
+  width:42px;
+  height:42px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:#fff0ce;
+  border-radius:12px;
+  font-size:22px;
+}
+.ing-name{font-weight:bold;color:#51351d}
+.ing-name small{
+  display:block;
+  font-weight:normal;
+  color:#816d57;
+  font-size:13px;
+}
+.ingredients-variant{
+  margin-top:18px;
+  padding-top:18px;
+  border-top:1px dashed #ddc9a8;
+  text-align:center;
+}
+.ingredients-variant strong{
+  display:block;
+  color:#854812;
+  margin-bottom:10px;
+}
+.variant-tags{
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  gap:8px;
+}
+.variant-tags span{
+  background:#fff0ce;
+  color:#713d12;
+  padding:5px 14px;
+  border-radius:20px;
+  font-size:14px;
+  font-weight:bold;
+}
+
 .products{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:17px;margin-top:30px}
 .card{background:white;padding:25px 12px;text-align:center;border-radius:18px;box-shadow:0 5px 20px #0000000c;transition:.2s}
 .card:hover{transform:translateY(-6px)}
@@ -85,7 +165,7 @@ footer{padding:30px;text-align:center;background:#3b2413;color:white;line-height
 <body>
 <header>
 <a class="logo" href="#home">
-  <img src="LOGO SANGKEPO.png" alt="by TAWIFA">
+  <img src="LOGO SANGKEPO.png" alt="Logo Sangkepo by TAWIFA">
   <span class="logo-text">
     by TAWIFA
   </span>
@@ -115,6 +195,28 @@ footer{padding:30px;text-align:center;background:#3b2413;color:white;line-height
 <p>SANGKEPO by TAWIFA merupakan produk stik pisang homemade yang berasal dari Pontianak, Kalimantan Barat.</p>
 <p>Dibuat untuk menjadi camilan yang menyenangkan dengan berbagai pilihan rasa. Cocok dinikmati ketika bersantai, belajar, berkumpul bersama teman, maupun saat bepergian.</p>
 <p><b>Bangga dengan produk lokal Pontianak!</b></p>
+
+<div class="ingredients-box">
+  <h3>Komposisi</h3>
+  <p class="ingredients-intro">SANGKEPO dibuat menggunakan bahan-bahan pilihan, yaitu:</p>
+
+  <ul class="ingredients-list">
+    <li><span class="ing-icon">🍌</span><span class="ing-name">Pisang kepok</span></li>
+    <li><span class="ing-icon">🛢️</span><span class="ing-name">Minyak goreng</span></li>
+    <li><span class="ing-icon">🧂</span><span class="ing-name">Bumbu perasa<small>Sesuai varian rasa</small></span></li>
+  </ul>
+
+  <div class="ingredients-variant">
+    <strong>Pilihan Varian Rasa</strong>
+    <div class="variant-tags">
+      <span>Balado</span>
+      <span>Jagung Bakar</span>
+      <span>Coklat</span>
+      <span>Original</span>
+      <span>Daun Jeruk</span>
+    </div>
+  </div>
+</div>
 </div>
 </section>
 
@@ -145,7 +247,7 @@ footer{padding:30px;text-align:center;background:#3b2413;color:white;line-height
 <p>Stik Pisang Homemade Khas Pontianak<br><strong style="font-size:32px;color:#ffda75">Rp10.000</strong> / kemasan</p>
 
 <form id="orderForm">
-<label>Nama Pemesan</label>
+<label for="nama">Nama Pemesan</label>
 <input id="nama" required placeholder="Nama kamu">
 
 <label for="varian">Pilih Varian Rasa</label>
@@ -157,10 +259,10 @@ footer{padding:30px;text-align:center;background:#3b2413;color:white;line-height
     <option value="Daun Jeruk">Daun Jeruk</option>
 </select>
 
-<label>Jumlah Pesanan</label>
+<label for="jumlah">Jumlah Pesanan</label>
 <input id="jumlah" type="number" min="1" value="1" required>
 
-<label>Catatan</label>
+<label for="catatan">Catatan</label>
 <textarea id="catatan" placeholder="Catatan tambahan (opsional)"></textarea>
 
 <button type="submit">PESAN MELALUI WHATSAPP</button>
